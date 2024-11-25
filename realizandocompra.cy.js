@@ -21,12 +21,12 @@ describe('RealizarCompra', () => {
 
                 cy.get(':nth-child(5) > .btn')
                 .click()
-                cy.screenshot('produto-escolhido')
+                cy.screenshot('Print1')
 
                     //clicando para verificar o carrinho
                  cy.get('u')
                    .click()
-                   cy.screenshot('Carrinho-produtos')
+                   cy.screenshot('Print2')
                    
                     //processando checkout
                     cy.get('.col-sm-6 > .btn')
@@ -41,8 +41,8 @@ describe('RealizarCompra', () => {
              .type('Joaquim Nogueira')
                     //necessario alterar email para realizar novo cadastro
              cy.get('#form > div > div > div:nth-child(3) > div > form > input[type=email]:nth-child(3)')
-             .type('JoaNog833@email.com')
-             cy.screenshot('tela-login-criarconta')
+             .type('JoNog1231@email.com')
+             cy.screenshot('Print3')
 
               cy.get('#form > div > div > div:nth-child(3) > div > form > button')
               .click()
@@ -74,7 +74,7 @@ describe('RealizarCompra', () => {
                             
                             cy.get('#mobile_number.form-control')
                             .type('81999090987')
-                            cy.screenshot('criarconta-campospreenchidos')
+                            cy.screenshot('Print4')
 
                             //Criando Conta
 
@@ -112,12 +112,12 @@ describe('RealizarCompra', () => {
                    
                    cy.get('[data-qa="expiry-year"]')
                    .type('2029')
-                   cy.screenshot('pagamento-preenchido')
+                   cy.screenshot('Print5')
 
                     //finalizando pagamento //
                     cy.get('[data-qa="pay-button"]')
                     .click()
-                    cy.screenshot('pagamento-finalizado')
+                    cy.screenshot('Print6')
                     
                                  
                     //validando pedido realizado e status:
@@ -128,7 +128,7 @@ describe('RealizarCompra', () => {
 
                     cy.readFile('cypress/downloads/invoice.txt')
                     .should('exist')
-                    cy.screenshot('success-invoice')
+                    cy.screenshot('Print7-Testefinalizado')
             
     })
 })
